@@ -3,24 +3,30 @@ import { Button } from "@/components/ui/button";
 import { getAllEvents } from "@/lib/actions/event.actions";
 import Image from "next/image";
 import Link from "next/link";
+import Search from "@/components/shared/Search";
+import { SearchParamProps } from "@/types";
+import CategoryFilter from "@/components/shared/CategoryFilter";
 
-export default async function Home() {
+export default async function Home({searchParams}:SearchParamProps) {
+  const page = Number(searchParams?.page) || 1;
+  const searchText = (searchParams?.query as string) || '';
+  const category = (searchParams?.category as string) || '';
   const events = await getAllEvents({
-    query: '',
-    category: '',
-    page: 1,
+    query: searchText,
+    category: category,
+    page: page,
     limit: 6
   })
 
-  console.log(events)
+  
 
   return (
     <>
-    <section className="bg-primary-50 bg-dotted bg-pattern bg-contain py-5 md:py-10">
+    <section className="bg-slate-200 bg-dotted bg-pattern bg-contain py-5 md:py-10">
       <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
         <div className="flex flex-col justify-center gap-8">
           <h1 className="h1-bold">
-            Make Your Events Happen through Happenly and happily
+            Make Your Events Happen through Evently and happily
           </h1>
           <p className="p-regular md:p-regular-24">
             Book, Host and Connet Your Events with the help of Our platform
@@ -43,12 +49,12 @@ export default async function Home() {
 
     </section>
     <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-      <h2 className="h2-bold">
-        Trusted By People, Connected By Happenly
+      <h2 className="h2-bold text-white">
+        Trusted By People, Connected By Evently
       </h2>
       <div className="flex w-ful flex-col gap-5 md:flex-row">
-        Search
-        CategoryFilter
+        <Search placeholder="Search Events..."/>
+        <CategoryFilter/>
 
       </div>
       <Collection
