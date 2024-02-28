@@ -23,7 +23,7 @@ export type CreateUserParams = {
       description: string
       location: string
       imageUrl: string
-      startDateTime: Date
+      startDateTime?: Date
       endDateTime: Date
       categoryId: string
       price: string
@@ -41,7 +41,7 @@ export type CreateUserParams = {
       imageUrl: string
       description: string
       location: string
-      startDateTime: Date
+      startDateTime?: Date
       endDateTime: Date
       categoryId: string
       price: string
