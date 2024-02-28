@@ -87,7 +87,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
       try {
         const updatedEvent = await updateEvent({
           userId,
-          event: { ...values, imageUrl: uploadedImageUrl, _id: eventId, },
+          event: { ...values, imageUrl: uploadedImageUrl, _id: eventId },
           path: `/events/${eventId}`
         })
 
@@ -190,7 +190,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
         <div className="flex flex-col gap-5 md:flex-row">
           <FormField
               control={form.control}
-              name="startDatetime"
+              name="startDateTime"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
