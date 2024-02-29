@@ -26,7 +26,7 @@ export default async function Home({searchParams}:SearchParamProps) {
       <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
         <div className="flex flex-col justify-center gap-8">
           <h1 className="h1-bold">
-            Make Your Events Happen through Evently and happily
+          Evently: Where Every Student Finds Their Next Adventure!
           </h1>
           <p className="p-regular md:p-regular-24">
             Book, Host and Connet Your Events with the help of Our platform
@@ -50,7 +50,7 @@ export default async function Home({searchParams}:SearchParamProps) {
     </section>
     <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
       <h2 className="h2-bold text-white">
-        Trusted By People, Connected By Evently
+        Trusted By Students, Connected By Evently
       </h2>
       <div className="flex w-ful flex-col gap-5 md:flex-row">
         <Search placeholder="Search Events..."/>
