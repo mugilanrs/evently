@@ -29,7 +29,7 @@ export default async function Home({searchParams}:SearchParamProps) {
           Evently: Where Every Student Finds Their Next Adventure!
           </h1>
           <p className="p-regular md:p-regular-24">
-            Book, Host and Connet Your Events with the help of Our platform
+            Book, Host and Connect Your Events with the help of Our platform
           </p>
           <Button size="lg" asChild className="button w-full sm:w-fit">
             <Link href="#events">

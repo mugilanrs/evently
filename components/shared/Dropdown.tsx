@@ -1,3 +1,4 @@
+'use client'
 import React, { startTransition, useEffect, useState } from 'react'
 import {
     Select,
@@ -57,7 +58,9 @@ const Dropdown = ({value, onChangeHandler}: DropdownProps) => {
         <SelectValue placeholder="Category" />
     </SelectTrigger>
     <SelectContent>
+    console.log(categories);
         {categories.length > 0 && categories.map((category) => (
+        
             <SelectItem key={category._id} value={category._id} className='select-item p-regular-14'>
                 {category.name}
             </SelectItem>
