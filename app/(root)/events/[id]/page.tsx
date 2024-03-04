@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
   const event = await getEventById(id);
+  console.log(event)
 
   const relatedEvents = await getRelatedEventsByCategory({
     categoryId: event.category._id,
@@ -23,7 +24,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
           alt="hero image"
           width={1000}
           height={1000}
-          className="h-full min-h-[300px] object-contain object-center"
+          className="h-full min-h-[300px] object-cover object-center"
         />
 
         <div className="flex w-full flex-col gap-8 p-5 md:p-10">

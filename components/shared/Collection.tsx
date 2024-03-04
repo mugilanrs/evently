@@ -2,7 +2,6 @@ import { IEvent } from '@/lib/database/models/event.model'
 import React from 'react'
 import Card from './Card'
 import Pagination from './Pagination'
-// import Pagination from './Pagination'
 
 type CollectionProps = {
   data: IEvent[],
@@ -32,7 +31,6 @@ const Collection = ({
             {data.map((event) => {
               const hasOrderLink = collectionType === 'Events_Organized';
               const hidePrice = collectionType === 'My_Tickets';
-              
 
               return (
                 <li key={event._id} className="flex justify-center">
